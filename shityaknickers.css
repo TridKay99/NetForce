@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'netflix';
+  font-family: 'shityaknickers';
   src: url('BebasNeue-Regular.ttf')
 }
 
@@ -20,7 +20,7 @@ body {
 
 .title {
   color: red;
-  font-family: 'netflix';
+  font-family: 'shityaknickers';
   font-size: 70px;
   margin-top: 60px;
   text-align: center;
@@ -57,11 +57,13 @@ body {
 button {
   width: 15%;
   margin-top: 100px;
-  length: 20%
+  length: 20%;
+
 }
 
 p {
   color: white;
-  font-size: 40px;
+  font-size: 100px;
   text-align: center;
+  font-family: 'shityaknickers';
 }
