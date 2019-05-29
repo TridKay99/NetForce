@@ -16,5 +16,15 @@ const horrorMovies = ['The Perfection','Await Further Instructions','Meet the Bl
 'Taking Lives','Mercy','Contagion','The Cloverfield Paradox','From Dusk till Dawn(TV show)','Nightmare on Elm Street4: The Dream Master','The Presence']
 
 // Finds random element inside array
-let movie = horrorMovies[Math.floor(Math.random()*horrorMovies.length)]
-console.log(movie);
+
+
+const displayRandomMovie = () => {
+  let movie = horrorMovies[Math.floor(Math.random()*horrorMovies.length)]
+
+  let container = document.querySelector(".container");
+
+  let movieTitle = document.createElement("p");
+  movieTitle.innerText = movie
+
+  container.appendChild(movieTitle)
+}
