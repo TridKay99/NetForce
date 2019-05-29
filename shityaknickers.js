@@ -23,10 +23,10 @@ const displayRandomMovie = () => {
   let movieTitle = document.createElement("p");
 
   if(randHorrors.length === 0) {
-    movieTitle.innerText = movie
-    container.appendChild(movieTitle)
-    randHorrors.push(movieTitle)
-    
+    // movieTitle.innerText = movie
+    // container.appendChild(movieTitle)
+    // randHorrors.push(movieTitle)
+    alert("virgin");
   } else {
     document.querySelector("p").remove()
     randHorrors.pop()
