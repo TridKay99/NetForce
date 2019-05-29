@@ -14,17 +14,24 @@ const horrorMovies = ['The Perfection','Await Further Instructions','Meet the Bl
 'Slasher(TV show)','The Shallows','Black Summer(TV show)','My Teacher, My Obsession','Lavender','Chambers','Deadly Switch','Viral','Dismissed','Twinsanity',
 'You Get Me','Kidnap','The Mist','Z Nation(TV show)','I Am Legend','Trust','The Babysitters Seduction','Circle','Shutter','XX','Into the Storm','Hold the Dark',
 'Taking Lives','Mercy','Contagion','The Cloverfield Paradox','From Dusk till Dawn(TV show)','Nightmare on Elm Street4: The Dream Master','The Presence']
-
+const randHorrors = []
 // Finds random element inside array
-
-
 const displayRandomMovie = () => {
+
   let movie = horrorMovies[Math.floor(Math.random()*horrorMovies.length)]
-
   let container = document.querySelector(".container");
-
   let movieTitle = document.createElement("p");
-  movieTitle.innerText = movie
 
-  container.appendChild(movieTitle)
+  if(randHorrors.length === 0) {
+    movieTitle.innerText = movie
+    container.appendChild(movieTitle)
+    randHorrors.push(movieTitle)
+    
+  } else {
+    document.querySelector("p").remove()
+    randHorrors.pop()
+    movieTitle.innerText = movie
+    container.appendChild(movieTitle)
+    randHorrors.push(movieTitle)
+  }
 }
