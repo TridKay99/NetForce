@@ -5,7 +5,7 @@ const horrorMovies = ['The Perfection','Await Further Instructions','Meet the Bl
 'The Babysitter','Christine','Apostle','The Bye Bye Man','The Strangers: Prey at night','MaleVolent','Oculuis','IT','Rogue','Doom',
 'Anacondas: The hung for the Blood Orchid','Geralds Game','The Rite','Legion','The Open House','Priest','Cargo','The Neon Demon','Veronica',
 'Errementari: The Blacksmith and the devil','The Wailer','Rampant','The Presence','Shutter','Dont Kill it','Wyrmwood: Road of the dead','Teenage Space Vampires',
-'Gremlins','Creep','Creep 2','Murder Party','Backcountry','Here Alone','He Never Died','Ravenous','Under the Shadow','Happy Hunting','The Forest','Satanic',
+'Gremlins','Creep','Creep 2','Murder Party','Backcountry','Here Alone','He Never Died','Ravenous','Under the Shadow','Happy Hunting','The Forest',
 'One Missed Call','Hes out There','The Rezort','What Lies Beneath','Clinical','Wolves at the Door','Febuary','American Poltergeist','Our House','Final Girl',
 'American Poltergiest 2','Paranomal Activity 4','The Life Changer','Little Evil','Rupture','I am the pretty thing that lives in the house','Incarnate','Holidays',
 'The Lodgers','The Nightmare','The Hose of the Dissapeared','May the Devil take you','Target','Animas','Cube','Zombeavers','Dont Hang Up','Family Blood',
@@ -23,10 +23,9 @@ const displayRandomMovie = () => {
   let movieTitle = document.createElement("p");
 
   if(randHorrors.length === 0) {
-    // movieTitle.innerText = movie
-    // container.appendChild(movieTitle)
-    // randHorrors.push(movieTitle)
-    alert("Virgin")
+    movieTitle.innerText = movie
+    container.appendChild(movieTitle)
+    randHorrors.push(movieTitle)
   } else {
     document.querySelector("p").remove()
     randHorrors.pop()
