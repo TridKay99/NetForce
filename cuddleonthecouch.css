@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'shityaknickers';
+  src: url('BebasNeue-Regular.ttf')
+}
+
 * {
   margin: 0px;
 }
@@ -51,6 +56,19 @@ body {
   box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 }
 
-h1 {
-
+.stanContainer {
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 70px;
 }
+
+p {
+  color: hotpink;
+  font-size: 50px; */
+  text-align: center;
+  font-family: 'shityaknickers';
+  /* height: 30%;
+} */
