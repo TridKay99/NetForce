@@ -237,7 +237,128 @@ const stanDocos = [
   }
 ]
 
-
+// const netDocos = [
+//   {
+//     name:"The Innocent Man",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"The Investigator: A British Crime Story",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Making a Murderer 2",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"I am a Killer",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"The Keppers",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"The People vs O.J Simpson",
+//     genre:"Biography"
+//   },
+//   {
+//     name:"Inside the Criminal Mind",
+//     genre:"Crime"
+//   },
+//   {
+//     name:"The Staircase",
+//     genre:"Crime"
+//   },
+//   {
+//     name:"Women Behind Bars",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Inside the Worlds Toughest Prisons",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"The Assassination of Gianni Versace",
+//     genre: ["Biography","Crime"]
+//   },
+//   {
+//     name:"Evil Genius: The True Story of Americas most Diabolical Bank Heist",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Muder Mountain",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Wild Wild Country",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Drug Lords",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Dirty Money",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Seven Seconds",
+//     genre: "Crime"
+//   },
+//   {
+//     name: "Dope",
+//     genre: "Crime"
+//   },
+//   {
+//     name: "Inside the Real Narcos",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Terrorism: Close Calls",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Forensic Files",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"MindHunter",
+//     genre: ["Biography","Crime"]
+//   },
+//   {
+//     name:"Obsession Dark Desires",
+//     genre: "Crime"
+//   },
+//   {
+//     name: "D",
+//     genre: "Crime"
+//   },
+//   {
+//     name:"Drugs Inc",
+//     genre:
+//   },
+//   {
+//     name:,
+//     genre:
+//   },
+//   {
+//     name:,
+//     genre:
+//   },
+//   {
+//     name:,
+//     genre:
+//   },
+//   {
+//     name:,
+//     genre:
+//   },
+//   {
+//     name:,
+//     genre:
+//   },
+// ]
 // const StanPrint = () => {
 
 
@@ -251,38 +372,101 @@ const stanDocos = [
 
 
 
-const docoMusic = []
 
-
-const docoMusic2 = []
 
 
 const docoDoco = []
-const docoBio = []
-const docoCrime = []
 const docoReality = []
 const docoDavid = []
 
 
-let container = document.querySelector(".stanContainer")
-let randDocoMusic = docoMusic[Math.floor(Math.random()*docoMusic.length)]
-let music = document.createElement("p");
 
-
+const docoMusic = []
+const pushPopMusic = []
+// Start of the function
 const stanMusic = () => {
+
+// Establishing the variable
+  let container = document.querySelector(".stanContainer")
+  let music = document.createElement("p");
+
+  // Finding each Documentary name that has a music genre.
   stanDocos.forEach((elem) => {
   if(elem.genre === "Music")
   docoMusic.push(elem.name)
   })
-  if(docoMusic2 === 0) {
-    docoMusic2.push(randDocoMusic)
 
+  // This needs to be done after elements are pushed into the array
+  let randDocoMusic = docoMusic[Math.floor(Math.random()*docoMusic.length)]
+  
+  // If array has nothing in it then just appendChild to container
+  // else remove append, and pop array and create again.
+  if(pushPopMusic.length === 0) {
     music.innerText = randDocoMusic;
     container.appendChild(music)
+    pushPopMusic.push(randDocoMusic)
   } else {
     document.querySelector("p").remove()
-    docoMusic2.pop()
+    pushPopMusic.pop()
     music.innerText = randDocoMusic;
     container.appendChild(music)
+    pushPopMusic.push(randDocoMusic)
   }
 }
+
+const docoBio = []
+const pushPopBio =  []
+
+const stanBio = () => {
+
+  let container = document.querySelector(".stanContainer")
+  let bio = document.createElement("p");
+
+  stanDocos.forEach((elem) => {
+    if(elem.genre === "Biography")
+    docoBio.push(elem.name)
+  })
+
+  let randDocoBio = docoBio[Math.floor(Math.random()*docoBio.length)]
+
+  if(pushPopBio.length === 0) {
+    bio.innerText = randDocoBio
+    container.appendChild(bio)
+    pushPopBio.push(randDocoBio)
+  } else {
+    document.querySelector("p").remove()
+    pushPopBio.pop()
+    bio.innerText = randDocoBio;
+    container.appendChild(bio)
+    pushPopBio.push(randDocoBio)
+  }
+}
+
+const docoCrime = []
+const pushPopCrime = []
+
+const stanCrime = () => {
+
+  let container = document.querySelector(".stanContainer")
+  let crime = document.createElement("p")
+  crime.className = "stanCrimeDoco"
+
+  stanDocos.forEach((elem) => {
+    if(elem.genre === "Crime")
+    docoCrime.push(elem.name)
+  })
+
+  let randDocoCrime = docoCrime[Math.floor(Math.random()*docoCrime.length)]
+
+  if(pushPopCrime.length === 0) {
+    crime.innerText = randDocoCrime;
+    container.appendChild(crime);
+    pushPopCrime.push(randDocoCrime);
+  } else if(pushPopBio.length > 0){
+    document.querySelector("stanCrimeDoco").remove();
+    pushPopCrime.pop();
+    crime.innerText = randDocoCrime;
+    container.appendChild(crime);
+    pushPopCrime.push(randDocoCrime);
+  }
+} 

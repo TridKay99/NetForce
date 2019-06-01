@@ -47,11 +47,19 @@ body {
   outline: 1px dashed #98abb9;
   outline-offset: -5px;
   
-  background-color: #000000;
+  background-color: #000000ad;
   height: 200px;
   width: 700px;
   margin: 50px auto;
   -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
   -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
   box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.stanContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: center;
 }
